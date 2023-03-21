@@ -4,6 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'azure-digital-apps-innovation-bree(2c2312a1-a4c1-4ac7-a8ec-e71d678b6258)'
+    appName: 'bree-test-app'
 - main
 
 pool:
