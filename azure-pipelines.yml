@@ -11,14 +11,6 @@ pool:
 
 steps:
 - task: Maven@3
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'azure-digital-apps-innovation-bree(2c2312a1-a4c1-4ac7-a8ec-e71d678b6258)'
-    appType: 'webAppLinux'
-    WebAppName: 'bree-test-app'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'a'
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
