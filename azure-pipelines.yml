@@ -1,11 +1,4 @@
 # Maven
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'azure-digital-apps-innovation-bree(2c2312a1-a4c1-4ac7-a8ec-e71d678b6258)'
-    appType: 'webApp'
-    WebAppName: 'bree-test-app'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -34,3 +27,11 @@ steps:
     summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: true
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'azure-digital-apps-innovation-bree(2c2312a1-a4c1-4ac7-a8ec-e71d678b6258)'
+    appType: 'webApp'
+    WebAppName: 'bree-test-app'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
